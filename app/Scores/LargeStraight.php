@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class LargeStraight implements Score
 {
-    public static function hasScored(Collection $numbers): bool
+    public function hasScored(Collection $numbers): bool
     {
         $sequence = $numbers->sort()->values()->toArray();
 

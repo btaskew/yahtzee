@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class SmallStraight implements Score
 {
-    public static function hasScored(Collection $numbers): bool
+    public function hasScored(Collection $numbers): bool
     {
         $previousNumber = null;
         $sequenceCount = 0;

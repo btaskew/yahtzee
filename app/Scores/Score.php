@@ -10,5 +10,5 @@ interface Score
      * @param Collection $numbers
      * @return bool
      */
-    public static function hasScored(Collection $numbers): bool;
+    public function hasScored(Collection $numbers): bool;
 }
