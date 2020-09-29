@@ -10,4 +10,9 @@ class FourOfAKind implements Score
     {
         return $numbers->countBy()->contains(4);
     }
+
+    public function getScore(Collection $numbers): int
+    {
+        return $numbers->sum();
+    }
 }

@@ -10,4 +10,9 @@ class Yahtzee implements Score
     {
         return $numbers->unique()->count() === 1;
     }
+
+    public function getScore(Collection $numbers): int
+    {
+        return 50;
+    }
 }

@@ -19,4 +19,11 @@ class FourOfAKindTest extends TestCase
         $this->assertFalse($score->hasScored(collect([1, 2, 3, 4, 5])));
         $this->assertFalse($score->hasScored(collect([1, 1, 1, 2, 2])));
     }
+
+    /** @test */
+    public function it_determines_the_correct_score()
+    {
+        $this->assertEquals(15, (new FourOfAKind())->getScore(collect([1, 2, 3, 4, 5])));
+        $this->assertEquals(5, (new FourOfAKind())->getScore(collect([1, 1, 1, 1, 1])));
+    }
 }

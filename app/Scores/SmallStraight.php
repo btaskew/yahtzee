@@ -29,4 +29,9 @@ class SmallStraight implements Score
 
         return $sequenceCount >= 3;
     }
+
+    public function getScore(Collection $numbers): int
+    {
+        return 30;
+    }
 }

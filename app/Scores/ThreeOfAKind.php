@@ -10,4 +10,9 @@ class ThreeOfAKind implements Score
     {
         return $numbers->countBy()->contains(3);
     }
+
+    public function getScore(Collection $numbers): int
+    {
+        return $numbers->sum();
+    }
 }

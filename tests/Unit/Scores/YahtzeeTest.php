@@ -18,4 +18,10 @@ class YahtzeeTest extends TestCase
         $this->assertFalse($score->hasScored(collect([1, 2, 3, 4, 5, 6])));
         $this->assertFalse($score->hasScored(collect([1, 1, 1, 1, 2, 1])));
     }
+
+    /** @test */
+    public function it_determines_the_correct_score()
+    {
+        $this->assertEquals(50, (new Yahtzee())->getScore(collect([1, 1, 1, 1, 1])));
+    }
 }

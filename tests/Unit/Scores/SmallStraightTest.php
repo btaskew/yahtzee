@@ -21,4 +21,10 @@ class SmallStraightTest extends TestCase
         $this->assertFalse($score->hasScored(collect([1, 1, 1, 1, 1])));
         $this->assertFalse($score->hasScored(collect([6, 2, 4, 3, 2])));
     }
+
+    /** @test */
+    public function it_determines_the_correct_score()
+    {
+        $this->assertEquals(30, (new SmallStraight())->getScore(collect([1, 1, 2, 3, 4])));
+    }
 }

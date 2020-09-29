@@ -19,4 +19,10 @@ class LargeStraightTest extends TestCase
         $this->assertFalse($score->hasScored(collect([1, 1, 1, 1, 1])));
         $this->assertFalse($score->hasScored(collect([1, 2, 3, 4, 2])));
     }
+
+    /** @test */
+    public function it_determines_the_correct_score()
+    {
+        $this->assertEquals(40, (new LargeStraight())->getScore(collect([1, 2, 3, 4, 5])));
+    }
 }

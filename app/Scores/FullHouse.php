@@ -10,4 +10,9 @@ class FullHouse implements Score
     {
         return $numbers->countBy()->sort()->flatten()->toArray() === [2, 3];
     }
+
+    public function getScore(Collection $numbers): int
+    {
+        return 25;
+    }
 }

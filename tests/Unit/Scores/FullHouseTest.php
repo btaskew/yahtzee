@@ -19,4 +19,10 @@ class FullHouseTest extends TestCase
         $this->assertFalse($score->hasScored(collect([1, 2, 3, 4, 5])));
         $this->assertFalse($score->hasScored(collect([1, 1, 1, 1, 2])));
     }
+
+    /** @test */
+    public function it_determines_the_correct_score()
+    {
+        $this->assertEquals(25, (new FullHouse())->getScore(collect([1, 1, 1, 1, 1])));
+    }
 }

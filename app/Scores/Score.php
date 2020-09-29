@@ -11,4 +11,10 @@ interface Score
      * @return bool
      */
     public function hasScored(Collection $numbers): bool;
+
+    /**
+     * @param Collection $numbers
+     * @return int
+     */
+    public function getScore(Collection $numbers): int;
 }
