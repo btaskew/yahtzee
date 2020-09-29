@@ -2,19 +2,11 @@
 
 namespace App\Scores;
 
-use Illuminate\Support\Collection;
+use App\DiceRoll;
 
 interface Score
 {
-    /**
-     * @param Collection $numbers
-     * @return bool
-     */
-    public function hasScored(Collection $numbers): bool;
+    public function hasScored(DiceRoll $roll): bool;
 
-    /**
-     * @param Collection $numbers
-     * @return int
-     */
-    public function getScore(Collection $numbers): int;
+    public function getScore(DiceRoll $roll): int;
 }

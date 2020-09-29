@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\DiceRoll;
 use App\Game;
 use App\Scores\FullHouse;
 use PHPUnit\Framework\TestCase;
@@ -13,7 +14,7 @@ class GameTest extends TestCase
     {
         $game = new Game();
 
-        $game->recordScore(new FullHouse(), collect([1, 1, 1, 2, 2]));
+        $game->recordScore(new FullHouse(), new DiceRoll([1, 1, 1, 2, 2]));
 
         $this->assertEquals(25, $game->getScore());
     }

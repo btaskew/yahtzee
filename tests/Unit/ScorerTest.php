@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\DiceRoll;
 use App\Scorer;
 use App\Scores\LargeStraight;
 use App\Scores\SmallStraight;
@@ -14,7 +15,7 @@ class ScorerTest extends TestCase
     {
         $this->assertEquals(
             collect([new SmallStraight(), new LargeStraight()]),
-            (new Scorer())->getScores(collect([1, 2, 3, 4, 5]))
+            (new Scorer())->getScores(new DiceRoll([1, 2, 3, 4, 5]))
         );
     }
 }

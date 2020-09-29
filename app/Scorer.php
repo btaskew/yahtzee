@@ -21,10 +21,10 @@ class Scorer
         Yahtzee::class,
     ];
 
-    public function getScores(Collection $numbers): Collection
+    public function getScores(DiceRoll $roll): Collection
     {
         return $this->potentialScores()
-            ->filter->hasScored($numbers)
+            ->filter->hasScored($roll)
             ->values();
     }
 

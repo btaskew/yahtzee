@@ -2,17 +2,17 @@
 
 namespace App\Scores;
 
-use Illuminate\Support\Collection;
+use App\DiceRoll;
 
 class ThreeOfAKind implements Score
 {
-    public function hasScored(Collection $numbers): bool
+    public function hasScored(DiceRoll $roll): bool
     {
-        return $numbers->countBy()->contains(3);
+        return $roll->getRoll()->countBy()->contains(3);
     }
 
-    public function getScore(Collection $numbers): int
+    public function getScore(DiceRoll $roll): int
     {
-        return $numbers->sum();
+        return $roll->getRoll()->sum();
     }
 }

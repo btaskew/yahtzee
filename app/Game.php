@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Scores\Score;
-use Illuminate\Support\Collection;
 
 class Game
 {
@@ -11,9 +10,9 @@ class Game
 
     protected array $scoresTaken = [];
 
-    public function recordScore(Score $score, Collection $numbers): void
+    public function recordScore(Score $score, DiceRoll $roll): void
     {
-        $this->score += $score->getScore($numbers);
+        $this->score += $score->getScore($roll);
         $this->scoresTaken[] = $score;
     }
 

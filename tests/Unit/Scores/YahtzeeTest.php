@@ -2,6 +2,7 @@
 
 namespace Scores;
 
+use App\DiceRoll;
 use App\Scores\Yahtzee;
 use PHPUnit\Framework\TestCase;
 
@@ -12,16 +13,16 @@ class YahtzeeTest extends TestCase
     {
         $score = new Yahtzee();
 
-        $this->assertTrue($score->hasScored(collect([1, 1, 1, 1, 1, 1])));
-        $this->assertTrue($score->hasScored(collect([6, 6, 6, 6, 6, 6])));
+        $this->assertTrue($score->hasScored(new DiceRoll([1, 1, 1, 1, 1, 1])));
+        $this->assertTrue($score->hasScored(new DiceRoll([6, 6, 6, 6, 6, 6])));
 
-        $this->assertFalse($score->hasScored(collect([1, 2, 3, 4, 5, 6])));
-        $this->assertFalse($score->hasScored(collect([1, 1, 1, 1, 2, 1])));
+        $this->assertFalse($score->hasScored(new DiceRoll([1, 2, 3, 4, 5, 6])));
+        $this->assertFalse($score->hasScored(new DiceRoll([1, 1, 1, 1, 2, 1])));
     }
 
     /** @test */
     public function it_determines_the_correct_score()
     {
-        $this->assertEquals(50, (new Yahtzee())->getScore(collect([1, 1, 1, 1, 1])));
+        $this->assertEquals(50, (new Yahtzee())->getScore(new DiceRoll([1, 1, 1, 1, 1])));
     }
 }

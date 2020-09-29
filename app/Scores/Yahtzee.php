@@ -2,16 +2,16 @@
 
 namespace App\Scores;
 
-use Illuminate\Support\Collection;
+use App\DiceRoll;
 
 class Yahtzee implements Score
 {
-    public function hasScored(Collection $numbers): bool
+    public function hasScored(DiceRoll $roll): bool
     {
-        return $numbers->unique()->count() === 1;
+        return $roll->getRoll()->unique()->count() === 1;
     }
 
-    public function getScore(Collection $numbers): int
+    public function getScore(DiceRoll $roll): int
     {
         return 50;
     }

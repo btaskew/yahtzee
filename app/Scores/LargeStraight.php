@@ -2,18 +2,18 @@
 
 namespace App\Scores;
 
-use Illuminate\Support\Collection;
+use App\DiceRoll;
 
 class LargeStraight implements Score
 {
-    public function hasScored(Collection $numbers): bool
+    public function hasScored(DiceRoll $roll): bool
     {
-        $sequence = $numbers->sort()->values()->toArray();
+        $sequence = $roll->getRoll()->sort()->values()->toArray();
 
         return $sequence === [1, 2, 3, 4, 5] || $sequence === [2, 3, 4, 5, 6];
     }
 
-    public function getScore(Collection $numbers): int
+    public function getScore(DiceRoll $roll): int
     {
         return 40;
     }

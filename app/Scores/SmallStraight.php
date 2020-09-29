@@ -2,16 +2,17 @@
 
 namespace App\Scores;
 
-use Illuminate\Support\Collection;
+use App\DiceRoll;
 
 class SmallStraight implements Score
 {
-    public function hasScored(Collection $numbers): bool
+    public function hasScored(DiceRoll $roll): bool
     {
         $previousNumber = null;
         $sequenceCount = 0;
 
-        $numbers->unique()
+        $roll->getRoll()
+            ->unique()
             ->sort()
             ->each(function ($currentNumber) use (&$previousNumber, &$sequenceCount) {
                 // Handle first number
@@ -30,7 +31,7 @@ class SmallStraight implements Score
         return $sequenceCount >= 3;
     }
 
-    public function getScore(Collection $numbers): int
+    public function getScore(DiceRoll $roll): int
     {
         return 30;
     }
