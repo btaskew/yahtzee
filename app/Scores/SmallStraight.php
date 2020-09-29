@@ -6,7 +6,7 @@ use App\DiceRoll;
 
 class SmallStraight implements Score
 {
-    public function hasScored(DiceRoll $roll): bool
+    public function hasBeenScored(DiceRoll $roll): bool
     {
         $previousNumber = null;
         $sequenceCount = 0;

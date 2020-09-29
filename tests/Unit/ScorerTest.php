@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\DiceRoll;
+use App\Game;
 use App\Scorer;
 use App\Scores\LargeStraight;
 use App\Scores\SmallStraight;
@@ -15,7 +16,19 @@ class ScorerTest extends TestCase
     {
         $this->assertEquals(
             collect([new SmallStraight(), new LargeStraight()]),
-            (new Scorer())->getScores(new DiceRoll([1, 2, 3, 4, 5]))
+            (new Scorer())->getScores(new DiceRoll([1, 2, 3, 4, 5]), new Game())
+        );
+    }
+
+    /** @test */
+    public function it_excludes_any_scores_that_have_already_been_scored()
+    {
+        $game = new Game();
+        $game->recordScore(new SmallStraight(), new DiceRoll([]));
+
+        $this->assertEquals(
+            collect([new LargeStraight()]),
+            (new Scorer())->getScores(new DiceRoll([1, 2, 3, 4, 5]), $game)
         );
     }
 }

@@ -6,7 +6,7 @@ use App\DiceRoll;
 
 class LargeStraight implements Score
 {
-    public function hasScored(DiceRoll $roll): bool
+    public function hasBeenScored(DiceRoll $roll): bool
     {
         $sequence = $roll->getRoll()->sort()->values()->toArray();
 

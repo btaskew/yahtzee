@@ -6,7 +6,7 @@ use App\DiceRoll;
 
 class ThreeOfAKind implements Score
 {
-    public function hasScored(DiceRoll $roll): bool
+    public function hasBeenScored(DiceRoll $roll): bool
     {
         return $roll->getRoll()->countBy()->contains(3);
     }

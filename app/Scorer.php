@@ -5,6 +5,7 @@ namespace App;
 use App\Scores\FourOfAKind;
 use App\Scores\FullHouse;
 use App\Scores\LargeStraight;
+use App\Scores\Score;
 use App\Scores\SmallStraight;
 use App\Scores\ThreeOfAKind;
 use App\Scores\Yahtzee;
@@ -21,10 +22,11 @@ class Scorer
         Yahtzee::class,
     ];
 
-    public function getScores(DiceRoll $roll): Collection
+    public function getScores(DiceRoll $roll, Game $game): Collection
     {
         return $this->potentialScores()
-            ->filter->hasScored($roll)
+            ->filter(fn(Score $score) => $score->hasBeenScored($roll))
+            ->filter(fn(Score $score) => !$game->hasScored($score))
             ->values();
     }
 

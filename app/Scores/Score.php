@@ -6,7 +6,7 @@ use App\DiceRoll;
 
 interface Score
 {
-    public function hasScored(DiceRoll $roll): bool;
+    public function hasBeenScored(DiceRoll $roll): bool;
 
     public function getScore(DiceRoll $roll): int;
 }

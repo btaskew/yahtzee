@@ -6,7 +6,7 @@ use App\DiceRoll;
 
 class Yahtzee implements Score
 {
-    public function hasScored(DiceRoll $roll): bool
+    public function hasBeenScored(DiceRoll $roll): bool
     {
         return $roll->getRoll()->unique()->count() === 1;
     }

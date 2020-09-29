@@ -6,7 +6,7 @@ use App\DiceRoll;
 
 class FullHouse implements Score
 {
-    public function hasScored(DiceRoll $roll): bool
+    public function hasBeenScored(DiceRoll $roll): bool
     {
         return $roll->getRoll()->countBy()->sort()->flatten()->toArray() === [2, 3];
     }

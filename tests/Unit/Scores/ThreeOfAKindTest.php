@@ -13,12 +13,12 @@ class ThreeOfAKindTest extends TestCase
     {
         $score = new ThreeOfAKind();
 
-        $this->assertTrue($score->hasScored(new DiceRoll([1, 1, 1, 2, 2])));
-        $this->assertTrue($score->hasScored(new DiceRoll([1, 2, 1, 2, 1])));
-        $this->assertTrue($score->hasScored(new DiceRoll([2, 3, 1, 1, 1])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([1, 1, 1, 2, 2])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([1, 2, 1, 2, 1])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([2, 3, 1, 1, 1])));
 
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 2, 3, 4, 5])));
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 3, 1, 2, 2])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 2, 3, 4, 5])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 3, 1, 2, 2])));
     }
 
     /** @test */

@@ -13,11 +13,11 @@ class YahtzeeTest extends TestCase
     {
         $score = new Yahtzee();
 
-        $this->assertTrue($score->hasScored(new DiceRoll([1, 1, 1, 1, 1, 1])));
-        $this->assertTrue($score->hasScored(new DiceRoll([6, 6, 6, 6, 6, 6])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([1, 1, 1, 1, 1, 1])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([6, 6, 6, 6, 6, 6])));
 
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 2, 3, 4, 5, 6])));
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 1, 1, 1, 2, 1])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 2, 3, 4, 5, 6])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 1, 1, 1, 2, 1])));
     }
 
     /** @test */

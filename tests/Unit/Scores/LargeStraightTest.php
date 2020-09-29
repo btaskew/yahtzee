@@ -13,12 +13,12 @@ class LargeStraightTest extends TestCase
     {
         $score = new LargeStraight();
 
-        $this->assertTrue($score->hasScored(new DiceRoll([1, 2, 3, 4, 5])));
-        $this->assertTrue($score->hasScored(new DiceRoll([6, 2, 4, 3, 5])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([1, 2, 3, 4, 5])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([6, 2, 4, 3, 5])));
 
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 1, 2, 3, 5])));
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 1, 1, 1, 1])));
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 2, 3, 4, 2])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 1, 2, 3, 5])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 1, 1, 1, 1])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 2, 3, 4, 2])));
     }
 
     /** @test */

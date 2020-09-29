@@ -20,4 +20,9 @@ class Game
     {
         return $this->score;
     }
+
+    public function hasScored(Score $score): bool
+    {
+        return in_array($score, $this->scoresTaken);
+    }
 }

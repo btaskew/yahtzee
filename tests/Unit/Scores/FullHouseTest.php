@@ -13,12 +13,12 @@ class FullHouseTest extends TestCase
     {
         $score = new FullHouse();
 
-        $this->assertTrue($score->hasScored(new DiceRoll([1, 1, 1, 2, 2])));
-        $this->assertTrue($score->hasScored(new DiceRoll([1, 2, 1, 2, 1])));
-        $this->assertTrue($score->hasScored(new DiceRoll([3, 3, 6, 3, 6])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([1, 1, 1, 2, 2])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([1, 2, 1, 2, 1])));
+        $this->assertTrue($score->hasBeenScored(new DiceRoll([3, 3, 6, 3, 6])));
 
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 2, 3, 4, 5])));
-        $this->assertFalse($score->hasScored(new DiceRoll([1, 1, 1, 1, 2])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 2, 3, 4, 5])));
+        $this->assertFalse($score->hasBeenScored(new DiceRoll([1, 1, 1, 1, 2])));
     }
 
     /** @test */
