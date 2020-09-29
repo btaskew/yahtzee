@@ -22,6 +22,12 @@ class FullHouseTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_the_correct_name()
+    {
+        $this->assertEquals('Full house', (new FullHouse())->getName());
+    }
+
+    /** @test */
     public function it_determines_the_correct_score()
     {
         $this->assertEquals(25, (new FullHouse())->getScore(new DiceRoll([1, 1, 1, 1, 1])));

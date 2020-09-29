@@ -31,6 +31,11 @@ class SmallStraight implements Score
         return $sequenceCount >= 3;
     }
 
+    public function getName(): string
+    {
+        return "Small straight";
+    }
+
     public function getScore(DiceRoll $roll): int
     {
         return 30;

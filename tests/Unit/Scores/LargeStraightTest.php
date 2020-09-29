@@ -22,6 +22,12 @@ class LargeStraightTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_the_correct_name()
+    {
+        $this->assertEquals('Large straight', (new LargeStraight())->getName());
+    }
+
+    /** @test */
     public function it_determines_the_correct_score()
     {
         $this->assertEquals(40, (new LargeStraight())->getScore(new DiceRoll([1, 2, 3, 4, 5])));

@@ -13,6 +13,11 @@ class LargeStraight implements Score
         return $sequence === [1, 2, 3, 4, 5] || $sequence === [2, 3, 4, 5, 6];
     }
 
+    public function getName(): string
+    {
+        return "Large straight";
+    }
+
     public function getScore(DiceRoll $roll): int
     {
         return 40;

@@ -16,7 +16,7 @@ class ScorerTest extends TestCase
     {
         $this->assertEquals(
             collect([new SmallStraight(), new LargeStraight()]),
-            (new Scorer())->getScores(new DiceRoll([1, 2, 3, 4, 5]), new Game())
+            (new Scorer(new Game()))->getScores(new DiceRoll([1, 2, 3, 4, 5]))
         );
     }
 
@@ -28,7 +28,7 @@ class ScorerTest extends TestCase
 
         $this->assertEquals(
             collect([new LargeStraight()]),
-            (new Scorer())->getScores(new DiceRoll([1, 2, 3, 4, 5]), $game)
+            (new Scorer($game))->getScores(new DiceRoll([1, 2, 3, 4, 5]))
         );
     }
 }

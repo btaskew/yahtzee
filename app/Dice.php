@@ -12,7 +12,6 @@ class Dice
             random_int(1, 6),
             random_int(1, 6),
             random_int(1, 6),
-            random_int(1, 6),
         ]);
     }
 }

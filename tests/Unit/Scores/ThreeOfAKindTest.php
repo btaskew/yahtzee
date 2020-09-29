@@ -22,6 +22,12 @@ class ThreeOfAKindTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_the_correct_name()
+    {
+        $this->assertEquals('Three of a kind', (new ThreeOfAKind())->getName());
+    }
+
+    /** @test */
     public function it_determines_the_correct_score()
     {
         $this->assertEquals(15, (new ThreeOfAKind())->getScore(new DiceRoll([1, 2, 3, 4, 5])));

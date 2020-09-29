@@ -11,6 +11,11 @@ class Yahtzee implements Score
         return $roll->getRoll()->unique()->count() === 1;
     }
 
+    public function getName(): string
+    {
+        return "YAHTZEE!";
+    }
+
     public function getScore(DiceRoll $roll): int
     {
         return 50;

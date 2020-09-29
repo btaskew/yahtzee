@@ -24,6 +24,12 @@ class SmallStraightTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_the_correct_name()
+    {
+        $this->assertEquals('Small straight', (new SmallStraight())->getName());
+    }
+
+    /** @test */
     public function it_determines_the_correct_score()
     {
         $this->assertEquals(30, (new SmallStraight())->getScore(new DiceRoll([1, 1, 2, 3, 4])));

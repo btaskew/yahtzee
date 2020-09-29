@@ -15,10 +15,10 @@ class DiceTest extends TestCase
     }
 
     /** @test */
-    public function it_creates_a_dice_roll_with_six_numbers()
+    public function it_creates_a_dice_roll_with_five_numbers()
     {
         $roll = Dice::roll();
 
-        $this->assertCount(6, $roll->getRoll());
+        $this->assertCount(5, $roll->getRoll());
     }
 }

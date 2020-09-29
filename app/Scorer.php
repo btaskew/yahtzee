@@ -22,11 +22,18 @@ class Scorer
         Yahtzee::class,
     ];
 
-    public function getScores(DiceRoll $roll, Game $game): Collection
+    private Game $game;
+
+    public function __construct(Game $game)
+    {
+        $this->game = $game;
+    }
+
+    public function getScores(DiceRoll $roll): Collection
     {
         return $this->potentialScores()
             ->filter(fn(Score $score) => $score->hasBeenScored($roll))
-            ->filter(fn(Score $score) => !$game->hasScored($score))
+            ->filter(fn(Score $score) => !$this->game->hasScored($score))
             ->values();
     }
 

@@ -21,6 +21,12 @@ class YahtzeeTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_the_correct_name()
+    {
+        $this->assertEquals('YAHTZEE!', (new Yahtzee())->getName());
+    }
+
+    /** @test */
     public function it_determines_the_correct_score()
     {
         $this->assertEquals(50, (new Yahtzee())->getScore(new DiceRoll([1, 1, 1, 1, 1])));

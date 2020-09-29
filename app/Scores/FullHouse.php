@@ -11,6 +11,11 @@ class FullHouse implements Score
         return $roll->getRoll()->countBy()->sort()->flatten()->toArray() === [2, 3];
     }
 
+    public function getName(): string
+    {
+        return "Full house";
+    }
+
     public function getScore(DiceRoll $roll): int
     {
         return 25;
