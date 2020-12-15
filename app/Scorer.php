@@ -5,6 +5,12 @@ namespace App;
 use App\Scores\FourOfAKind;
 use App\Scores\FullHouse;
 use App\Scores\LargeStraight;
+use App\Scores\NumberScores\Aces;
+use App\Scores\NumberScores\Fives;
+use App\Scores\NumberScores\Fours;
+use App\Scores\NumberScores\Sixes;
+use App\Scores\NumberScores\Threes;
+use App\Scores\NumberScores\Twos;
 use App\Scores\Score;
 use App\Scores\SmallStraight;
 use App\Scores\ThreeOfAKind;
@@ -14,6 +20,12 @@ use Illuminate\Support\Collection;
 class Scorer
 {
     const SCORES = [
+        Aces::class,
+        Twos::class,
+        Threes::class,
+        Fours::class,
+        Fives::class,
+        Sixes::class,
         ThreeOfAKind::class,
         FourOfAKind::class,
         FullHouse::class,
